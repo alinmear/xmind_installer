@@ -35,6 +35,9 @@ install() {
 
     echo "  * Copying usr/share/* to /usr/share"
     cp -Rv usr/share/* /usr/share/ || echo "==> Warning: failed to copy"
+
+    echo "  * Editing desktop entry"
+    sed -i -e 's|^Exec=.*|Exec=XMind %U|g' /usr/share/applications/xmind.desktop
 }
 
 cleanup() {
